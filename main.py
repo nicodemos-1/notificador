@@ -3,19 +3,21 @@ import time
 import os
 from winotify import Notification, audio
 
+estudos = {
+    "harmonia": 10,
+    "ritmo": 10,
+    "partitura": 10,
+    "tecnica": 5,
+    "repertorio": 25
+}
+
 user = os.getenv("USERNAME")
 notificacao = Notification(app_id="main.py", title="passou o tempo", msg="acabou o tempo", icon=f"C://Users/{user}/Documents/programacao/python/proj/test.png")
 notificacao.set_audio(audio.LoopingAlarm4, loop=False)
 
 def start() -> None:
-    timer = int(input("1-horas;\n2-minutos;\n>"))
-    temp = int(input("quanto tempo: "))
-    if timer == 1:
-        wait = temp * 3600
-    elif timer == 2:
-        wait = temp * 60
 
-    time.sleep(wait)
+    time.sleep()
     notificacao.show()
 
 def data()-> None:
